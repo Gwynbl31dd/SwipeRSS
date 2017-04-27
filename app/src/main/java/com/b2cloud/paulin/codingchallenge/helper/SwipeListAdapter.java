@@ -13,11 +13,13 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.b2cloud.paulin.codingchallenge.R;
 import com.b2cloud.paulin.codingchallenge.model.FeedItems;
+import com.b2cloud.paulin.codingchallenge.utilities.CustomVolleyRequestQueue;
 
 import java.util.List;
 
 /**
  * Created by pauli on 27-04-17.
+ * List adaptater
  */
 
 public class SwipeListAdapter extends BaseAdapter {
@@ -47,7 +49,33 @@ public class SwipeListAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        return null;
-    }
 
+        if (inflater == null) {
+            inflater = (LayoutInflater) activity
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        }
+
+        if (convertView == null) {
+            Log.d("position :",""+itemsList.get(position).getId());
+            if(itemsList.get(position).getId()==0) {
+                convertView = inflater.inflate(R.layout.list_row_top, null);
+            }
+            else {
+                convertView = inflater.inflate(R.layout.list_row, null);
+            }
+        }
+
+        NetworkImageView mImageView = (NetworkImageView) convertView.findViewById(R.id.imageView);
+        ImageLoader mImageLoader = CustomVolleyRequestQueue.getInstance(this.activity.getApplicationContext()).getImageLoader();
+        mImageLoader.get(itemsList.get(position).getImage(), ImageLoader.getImageListener(mImageView,
+                R.mipmap.ic_launcher, android.R.drawable.ic_dialog_alert));
+        mImageView.setImageUrl(itemsList.get(position).getImage(), mImageLoader);
+
+        TextView title = (TextView) convertView.findViewById(R.id.title);
+        title.setText(itemsList.get(position).getTitle());
+
+        TextView date = (TextView) convertView.findViewById(R.id.dateView);
+        date.setText(itemsList.get(position).getDate());
+        return convertView;
+    }
 }

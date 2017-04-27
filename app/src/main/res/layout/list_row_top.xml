@@ -36,7 +36,7 @@
             android:layout_marginBottom="10dp"
             android:layout_weight="1"/>
 
-        <com.example.pauli.swipe.utilities.CustomTextView
+        <TextView
             android:id="@+id/dateView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

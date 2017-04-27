@@ -3,8 +3,7 @@
     android:id="@+id/swipe_refresh_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/primaryGrey"
-    android:elevation="0dp">
+    android:background="@color/primaryGrey">
 
     <!-- List view to show the article list-->
     <ListView

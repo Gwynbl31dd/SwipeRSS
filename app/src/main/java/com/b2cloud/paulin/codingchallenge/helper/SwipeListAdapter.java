@@ -66,8 +66,11 @@ public class SwipeListAdapter extends BaseAdapter {
 
         NetworkImageView mImageView = (NetworkImageView) convertView.findViewById(R.id.imageView);
         ImageLoader mImageLoader = CustomVolleyRequestQueue.getInstance(this.activity.getApplicationContext()).getImageLoader();
+
+        //Use ic_launcher as default image loading and IC_dialog_alert as alert image
         mImageLoader.get(itemsList.get(position).getImage(), ImageLoader.getImageListener(mImageView,
                 R.mipmap.ic_launcher, android.R.drawable.ic_dialog_alert));
+
         mImageView.setImageUrl(itemsList.get(position).getImage(), mImageLoader);
 
         TextView title = (TextView) convertView.findViewById(R.id.title);

@@ -5,44 +5,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:background="#ffffff">
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_column="0"
         android:layout_weight="1"
         android:divider="@drawable/divider"
+        android:showDividers="middle"
         android:orientation="vertical"
-        android:padding="20dp"
-        android:showDividers="middle">
+        android:paddingLeft="@dimen/padding_large"
+        android:paddingRight="@dimen/padding_large"
+        android:paddingTop="@dimen/padding_medium">
 
         <com.b2cloud.paulin.codingchallenge.utilities.CustomTextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/padding_medium"
             android:layout_toLeftOf="@+id/imageView"
             android:layout_toStartOf="@+id/imageView"
-            android:textSize="@dimen/regular_text" />
+            android:textSize="@dimen/regular_text"
+            android:textStyle="bold" />
 
         <com.b2cloud.paulin.codingchallenge.utilities.CustomTextView
             android:id="@+id/dateView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:fontFamily="serif"
-            android:text="LOL"
+            android:layout_gravity="bottom"
+            android:layout_margin="@dimen/padding_small"
             android:textColor="@color/secondaryGrey" />
-
     </LinearLayout>
 
     <com.android.volley.toolbox.NetworkImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY"
-            android:layout_weight="2"
-            app:srcCompat="@android:drawable/stat_sys_download" />
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:scaleType="fitXY"
+        app:srcCompat="@android:drawable/stat_sys_download" />
 
 </LinearLayout>

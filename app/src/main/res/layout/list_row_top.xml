@@ -22,11 +22,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:divider="@drawable/divider"
         android:orientation="vertical"
         android:padding="20dp"
         android:showDividers="middle">
 
-        <TextView
+        <com.b2cloud.paulin.codingchallenge.utilities.CustomTextView
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,9 +35,10 @@
             android:layout_alignParentRight="true"
             android:layout_below="@+id/imageView"
             android:layout_marginBottom="10dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:textSize="@dimen/top_text" />
 
-        <TextView
+        <com.b2cloud.paulin.codingchallenge.utilities.CustomTextView
             android:id="@+id/dateView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -12,35 +12,37 @@
         android:layout_height="match_parent"
         android:layout_column="0"
         android:layout_weight="1"
+        android:divider="@drawable/divider"
         android:orientation="vertical"
         android:padding="20dp"
         android:showDividers="middle">
 
-        <TextView
+        <com.b2cloud.paulin.codingchallenge.utilities.CustomTextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:layout_toLeftOf="@+id/imageView"
-            android:layout_toStartOf="@+id/imageView" />
+            android:layout_toStartOf="@+id/imageView"
+            android:textSize="@dimen/regular_text" />
 
-        <TextView
+        <com.b2cloud.paulin.codingchallenge.utilities.CustomTextView
             android:id="@+id/dateView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:fontFamily="serif"
-            android:text="test"
+            android:text="LOL"
             android:textColor="@color/secondaryGrey" />
 
     </LinearLayout>
 
     <com.android.volley.toolbox.NetworkImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="fitXY"
-        android:layout_weight="2"
-        app:srcCompat="@android:drawable/stat_sys_download" />
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:layout_weight="2"
+            app:srcCompat="@android:drawable/stat_sys_download" />
 
 </LinearLayout>

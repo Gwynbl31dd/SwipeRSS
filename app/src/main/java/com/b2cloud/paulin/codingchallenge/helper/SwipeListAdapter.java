@@ -55,15 +55,14 @@ public class SwipeListAdapter extends BaseAdapter {
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
 
-        if (convertView == null) {
-            Log.d("position :",""+itemsList.get(position).getId());
-            if(itemsList.get(position).getId()==0) {
-                convertView = inflater.inflate(R.layout.list_row_top, null);
-            }
-            else {
-                convertView = inflater.inflate(R.layout.list_row, null);
-            }
+        Log.d("position :",""+itemsList.get(position).getId());
+        if(itemsList.get(position).getId()==0) {
+            convertView = inflater.inflate(R.layout.list_row_top, null);
         }
+        else {
+            convertView = inflater.inflate(R.layout.list_row, null);
+        }
+
 
         NetworkImageView mImageView = (NetworkImageView) convertView.findViewById(R.id.imageView);
         ImageLoader mImageLoader = CustomVolleyRequestQueue.getInstance(this.activity.getApplicationContext()).getImageLoader();

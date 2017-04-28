@@ -34,12 +34,18 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     private static final String TAG = MainActivity.class.getSimpleName();
     //URL for JSON data
     private static final String FEED_URL = "https://api.rss2json.com/v1/api.json?rss_url=http://www.abc.net.au/news/feed/51120/rss.xml";
-
+    //Layout to refrech the view
     private SwipeRefreshLayout mSwipeRefreshLayout;
+    //List view who contains the articles
     private ListView mListView;
+    //Adapter for the view
     private SwipeListAdapter adapter;
+    //List with articles (Feed)
     private List<FeedItems> itemsList;
 
+    /**
+     * @param savedInstanceState Bundle with saved session
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -137,6 +143,9 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
                             catch(JSONException e){
                                 e.printStackTrace();
                             } catch (ParseException e) {
+                                e.printStackTrace();
+                            }
+                            catch(Exception e){
                                 e.printStackTrace();
                             }
                         }

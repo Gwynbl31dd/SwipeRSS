@@ -19,16 +19,25 @@ public class Queue extends Application {
     private RequestQueue mRequestQueue;
     private static Queue mInstance;
 
+    /**
+     * Make a intance
+     */
     @Override
     public void onCreate() {
         super.onCreate();
         mInstance = this;
     }
 
+    /**
+     * @return this instance
+     */
     public static synchronized Queue getInstance() {
         return mInstance;
     }
 
+    /**
+     * @return the requested queue
+     */
     public RequestQueue getRequestQueue() {
         if (mRequestQueue == null) {
             mRequestQueue = Volley.newRequestQueue(getApplicationContext());

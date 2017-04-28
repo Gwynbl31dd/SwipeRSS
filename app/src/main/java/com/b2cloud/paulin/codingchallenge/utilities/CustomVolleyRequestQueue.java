@@ -17,7 +17,6 @@ import com.android.volley.toolbox.ImageLoader;
  * @since 27-04-2017
  * Custom volley request implementation for pictures
  */
-
 public class CustomVolleyRequestQueue {
 
     private static CustomVolleyRequestQueue mInstance;
@@ -25,6 +24,10 @@ public class CustomVolleyRequestQueue {
     private RequestQueue mRequestQueue;
     private ImageLoader mImageLoader;
 
+    /**
+     * Call the custom queue request
+     * @param context the app context
+     */
     private CustomVolleyRequestQueue(Context context) {
         mCtx = context;
         mRequestQueue = getRequestQueue();
@@ -43,6 +46,10 @@ public class CustomVolleyRequestQueue {
                 });
     }
 
+    /**
+     * @param context the app context
+     * @return the instance
+     */
     public static synchronized CustomVolleyRequestQueue getInstance(Context context) {
         if (mInstance == null) {
             mInstance = new CustomVolleyRequestQueue(context);
@@ -50,6 +57,9 @@ public class CustomVolleyRequestQueue {
         return mInstance;
     }
 
+    /**
+     * @return the requested queue
+     */
     public RequestQueue getRequestQueue() {
         if (mRequestQueue == null) {
             Cache cache = new DiskBasedCache(mCtx.getCacheDir(), 10 * 1024 * 1024);

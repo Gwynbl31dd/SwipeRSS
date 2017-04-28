@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="regular_text">30sp</dimen>
-    <dimen name="top_text">40sp</dimen>
-    <dimen name="top_picture">260dp</dimen>
+    <dimen name="regular_text">35sp</dimen>
+    <dimen name="top_text">45sp</dimen>
+    <dimen name="top_picture">450dp</dimen>
+    <dimen name="regular_picture">160dp</dimen>
+    <dimen name="padding_large">20dp</dimen>
+    <dimen name="padding_medium">10dp</dimen>
+    <dimen name="padding_small">5dp</dimen>
 </resources>

@@ -2,8 +2,9 @@
 <android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/swipe_refresh_layout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/primaryGrey">
+    android:layout_height="match_parent"
+    android:background="@color/primaryGrey"
+    android:clickable="false">
 
     <!-- List view to show the article list-->
     <ListView
@@ -11,10 +12,11 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:divider="#00000000"
-        android:dividerHeight="25dp"
-        android:paddingLeft="25dp"
-        android:paddingRight="25dp"
-        android:paddingTop="25dp">
+        android:dividerHeight="@dimen/regular_padding_ext"
+        android:paddingLeft="@dimen/regular_padding_ext"
+        android:paddingRight="@dimen/regular_padding_ext"
+        android:paddingTop="@dimen/regular_padding_ext">
+
     </ListView>
 
 </android.support.v4.widget.SwipeRefreshLayout>

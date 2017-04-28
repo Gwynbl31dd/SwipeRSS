@@ -1,40 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
     android:orientation="horizontal"
-    android:background="@color/white">
+    android:descendantFocusability="blocksDescendants">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:divider="@drawable/divider"
-        android:showDividers="middle"
+        android:gravity="center"
         android:orientation="vertical"
         android:paddingLeft="@dimen/padding_large"
         android:paddingRight="@dimen/padding_large"
-        android:paddingTop="@dimen/padding_medium">
+        android:paddingTop="@dimen/padding_medium"
+        android:showDividers="middle">
 
         <com.b2cloud.paulin.codingchallenge.utilities.CustomTextView
             android:id="@+id/title"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_marginBottom="@dimen/padding_medium"
             android:layout_toLeftOf="@+id/imageView"
             android:layout_toStartOf="@+id/imageView"
+            android:gravity="left"
             android:textSize="@dimen/regular_text"
             android:textStyle="bold" />
 
         <com.b2cloud.paulin.codingchallenge.utilities.CustomTextView
             android:id="@+id/dateView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
             android:layout_margin="@dimen/padding_small"
+            android:gravity="bottom"
             android:textColor="@color/secondaryGrey" />
     </LinearLayout>
 
@@ -43,6 +46,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="2"
+        android:minHeight="@dimen/regular_picture"
         android:scaleType="fitXY"
         app:srcCompat="@android:drawable/stat_sys_download" />
 

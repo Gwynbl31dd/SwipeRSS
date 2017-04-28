@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="regular_padding_ext">20dp</dimen>
     <dimen name="regular_text">22sp</dimen>
     <dimen name="top_text">35sp</dimen>
     <dimen name="top_picture">200dp</dimen>
+    <dimen name="regular_picture">135dp</dimen>
     <dimen name="padding_large">20dp</dimen>
     <dimen name="padding_medium">10dp</dimen>
     <dimen name="padding_small">5dp</dimen>

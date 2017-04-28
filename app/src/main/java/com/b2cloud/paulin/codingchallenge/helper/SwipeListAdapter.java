@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
@@ -18,35 +19,60 @@ import com.b2cloud.paulin.codingchallenge.utilities.CustomVolleyRequestQueue;
 import java.util.List;
 
 /**
- * Created by pauli on 27-04-17.
+ * @author Anthony Paulin
+ * @since 27-04-2017
  * List adaptater
  */
-
-public class SwipeListAdapter extends BaseAdapter {
+public class SwipeListAdapter extends BaseAdapter{
     private Activity activity;
     private LayoutInflater inflater;
     private List<FeedItems> itemsList;
 
+    /**
+     * @param activity the activity who calls
+     * @param itemsList A list of Items for the feed
+     */
     public SwipeListAdapter(Activity activity, List<FeedItems> itemsList) {
         this.activity = activity;
         this.itemsList = itemsList;
     }
 
+    /**
+     *
+     * @return the list count
+     */
     @Override
     public int getCount() {
         return itemsList.size();
     }
 
+    /**
+     *
+     * @param location Location of the items
+     * @return return the item as an object
+     */
     @Override
     public Object getItem(int location) {
         return itemsList.get(location);
     }
 
+    /**
+     *
+     * @param position Position of the item in the list
+     * @return the id
+     */
     @Override
     public long getItemId(int position) {
         return position;
     }
 
+    /**
+     *
+     * @param position position of the item in the list
+     * @param convertView the view
+     * @param parent the parent view
+     * @return convertView
+     */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
@@ -55,14 +81,12 @@ public class SwipeListAdapter extends BaseAdapter {
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
 
-        Log.d("position :",""+itemsList.get(position).getId());
         if(itemsList.get(position).getId()==0) {
             convertView = inflater.inflate(R.layout.list_row_top, null);
         }
         else {
             convertView = inflater.inflate(R.layout.list_row, null);
         }
-
 
         NetworkImageView mImageView = (NetworkImageView) convertView.findViewById(R.id.imageView);
         ImageLoader mImageLoader = CustomVolleyRequestQueue.getInstance(this.activity.getApplicationContext()).getImageLoader();

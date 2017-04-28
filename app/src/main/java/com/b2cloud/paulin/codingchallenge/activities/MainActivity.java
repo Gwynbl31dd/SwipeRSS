@@ -36,8 +36,6 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     private static final String FEED_URL = "https://api.rss2json.com/v1/api.json?rss_url=http://www.abc.net.au/news/feed/51120/rss.xml";
     //Layout to refrech the view
     private SwipeRefreshLayout mSwipeRefreshLayout;
-    //List view who contains the articles
-    private ListView mListView;
     //Adapter for the view
     private SwipeListAdapter adapter;
     //List with articles (Feed)
@@ -51,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mListView = (ListView) findViewById(R.id.listView);
+        ListView mListView = (ListView) findViewById(R.id.listView);
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
 
         itemsList = new ArrayList<>();

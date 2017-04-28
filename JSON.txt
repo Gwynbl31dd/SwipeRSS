@@ -1,0 +1,24 @@
+status
+feed
+	url
+	title
+	link
+	author
+	description
+	image
+items
+	title
+	pubDate
+	link
+	guid
+	author
+	thumbnail
+	description
+	content
+	enclosure
+		link
+		type
+		categories
+		thumbnail
+	type
+	categories
